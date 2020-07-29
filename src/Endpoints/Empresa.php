@@ -11,7 +11,7 @@ class Empresa{
         $this->client = $client;
     }
 
-    public function consultar(array $data){
+    public function consultar(){
         $curl = $this->client->getCurl('/v1/empresa', 'GET');
 
         $response = curl_exec($curl);
