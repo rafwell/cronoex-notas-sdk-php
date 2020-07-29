@@ -14,7 +14,7 @@ class Client{
         $this->secret = $secret;
     }
 
-    protected function getCurl(string $uri){
+    protected function getCurl(string $uri, $method){
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -25,7 +25,7 @@ class Client{
         CURLOPT_TIMEOUT => 0,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_CUSTOMREQUEST => $method,
         CURLOPT_HTTPHEADER => array(
             "token: $this->token",
             "secret: $this->secret",
