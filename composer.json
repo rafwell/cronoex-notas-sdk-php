@@ -3,8 +3,7 @@
     "description": "SDK para comunicaçao com a api Cronoex Notas escrito em PHP.",
     "type": "library",
     "require": {
-        "php": "^7.2",
-        "ext-curl": "^7.2"
+        "php": "^5.6"
     },
     "license": "MIT",
     "authors": [
