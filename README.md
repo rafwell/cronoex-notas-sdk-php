@@ -22,10 +22,10 @@ $cronoexNotas = new Client($token, $secret);
 //$res = $cronoexNotas->empresa()->alterarLogo([]);
 
 //$res = $cronoexNotas->nfse()->listar();
-//$res = $cronoexNotas->nfse()->consultar('db255687-41c5-4611-a278-d84f9f32011c');
+//$res = $cronoexNotas->nfse()->consultar('nfse_id');
 //$res = $cronoexNotas->nfse()->criar([]);
 
-$res = $cronoexNotas->nfse()->cancelar('db255687-41c5-4611-a278-d84f9f32011c', []);
+$res = $cronoexNotas->nfse()->cancelar('nfse_id', []);
 
 die(print_r($res->toArray()));
 ```
