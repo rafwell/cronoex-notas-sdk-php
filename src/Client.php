@@ -3,6 +3,7 @@
 namespace Rafwell\CronoexNotas;
 
 use Rafwell\CronoexNotas\Endpoints\Empresa;
+use Rafwell\CronoexNotas\Endpoints\NFSe;
 
 class Client{
 
@@ -14,7 +15,7 @@ class Client{
         $this->secret = $secret;
     }
 
-    protected function getCurl(string $uri, $method){
+    protected function getCurl(string $uri, $method, array $data = []){
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -33,10 +34,30 @@ class Client{
         ),
         ));
 
+        if($method == 'POST' || $method == 'PATCH'){
+            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
+        }
+
         return $curl;
+    }
+
+    public function request(string $uri, $method, array $data = []):Response{
+        $curl = $this->getCurl($uri, $method, $data);
+        
+        $curlRes = curl_exec($curl);
+
+        $response = new Response($curlRes, $curl);
+
+        curl_close($curl);
+        
+        return $response;
     }
 
     public function empresa(){
         return new Empresa($this);
+    }
+
+    public function nfse(){
+        return new NFSe($this);
     }
 }
