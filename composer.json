@@ -1,0 +1,21 @@
+{
+    "name": "rafwell/cronoex-notas-sdk-php",
+    "description": "SDK para comunicaçao com a api Cronoex Notas escrito em PHP.",
+    "type": "library",
+    "require": {
+        "php": "7.2",
+        "ext-curl": "^7.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rafael Souza",
+            "email": "rafaotec@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Rafwell\\CronoexNotas\\": "src/"
+        }
+    }
+}
