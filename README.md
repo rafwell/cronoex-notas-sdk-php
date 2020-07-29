@@ -7,7 +7,7 @@ Os métodos e os dados que você precisa saber estão aqui: [Documentação Ofic
 
 # Exemplos Básicos
 
-```
+```php
 $token = 'Seu token';
 $secret = 'Seu secret';
 $cronoexNotas = new Client($token, $secret);
