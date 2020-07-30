@@ -14,7 +14,7 @@ Os métodos e os dados que você precisa saber estão aqui: [Documentação Ofic
 ```php
 $token = 'Seu token';
 $secret = 'Seu secret';
-$cronoexNotas = new Client($token, $secret);
+$cronoexNotas = new \Rafwell\CronoexNotas\Client($token, $secret);
 
 //$res = $cronoexNotas->empresa()->consultar();
 //$res = $cronoexNotas->empresa()->alterar([]);
