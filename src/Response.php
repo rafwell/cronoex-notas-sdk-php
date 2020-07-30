@@ -35,7 +35,7 @@ class Response{
                 $error = 'Não autorizado. Confira o token e o secret.';
             break;
             case 404:
-                $error = 'Endpoint não encontrado.';
+                $error = 'Página não encontrada. Verifique se o link está correto.';
             break;
             case 422:
                 $error = 'Informações inválidas. Confira os dados enviados.';
