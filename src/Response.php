@@ -7,9 +7,9 @@ use Rafwell\CronoexNotas\Endpoints\Empresa;
 class Response{
 
     protected $body, $curl, $info;
-    protected $hasError;
-    protected $error;
-
+    public $hasError;
+    public $error;
+    
     public function __construct($body, $curl){
         $this->body = $body;
         $this->curl = $curl;
@@ -20,6 +20,10 @@ class Response{
             $this->setError();
         }else{
             $this->hasError = false;
+        }
+
+        foreach($this->toArray() as $k=>$v){
+            $this->$k = $v;
         }
     }
 
