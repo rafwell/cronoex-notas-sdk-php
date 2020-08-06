@@ -60,6 +60,7 @@ class Response{
         $array = [];
         $data =  json_decode($this->body, true);
         $array['success'] = !$this->hasError;
+        $array['status'] = $this->info['http_code'];
         $array['error'] = $this->error;
         $array['data'] = $data ? $data : [];
         return $array;
