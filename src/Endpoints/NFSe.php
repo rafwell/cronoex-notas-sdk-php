@@ -4,6 +4,7 @@ namespace Rafwell\CronoexNotas\Endpoints;
 
 use Rafwell\CronoexNotas\Client;
 use Rafwell\CronoexNotas\Response;
+use Exception;
 
 class NFSe{
     
@@ -21,6 +22,9 @@ class NFSe{
     }
 
     public function consultar($nfse_id):Response{
+        if(!$nfse_id){
+            throw new Exception("Parametro nfse_id não pode ser nulo para consulta.");
+        }
         $response = $this->client->request("/v1/nfses/$nfse_id", 'GET');
 
         return $response;
